@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weeta Florist</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- CSS KHUSUS KELOPAK BUNGA  -->
+    <style>
+    /* Kontainer Kelopak Jatuh Murni CSS */
+    .petal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 999;
+        overflow: hidden;
+    }
+
+    /* Membuat beberapa kelopak dengan posisi dan kecepatan berbeda */
+    .petal {
+        position: absolute;
+        top: -10vh;
+        background-color: #ffb3c6;
+        border-radius: 150% 0% 150% 0%;
+        opacity: 0.75;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(-10vh) translateX(0) rotate(0deg);
+        }
+        100% {
+            transform: translateY(105vh) translateX(50px) rotate(360deg);
+        }
+    }
+
+    /* Kita buat 5 kelopak statis yang langsung aktif melayang */
+    .petal:nth-child(1) { left: 10%; width: 12px; height: 16px; animation-duration: 5s; animation-delay: 0s; }
+    .petal:nth-child(2) { left: 30%; width: 15px; height: 20px; animation-duration: 7s; animation-delay: 2s; }
+    .petal:nth-child(3) { left: 50%; width: 10px; height: 14px; animation-duration: 6s; animation-delay: 1s; }
+    .petal:nth-child(4) { left: 70%; width: 14px; height: 18px; animation-duration: 8s; animation-delay: 3s; }
+    .petal:nth-child(5) { left: 90%; width: 12px; height: 16px; animation-duration: 6s; animation-delay: 4s; }
+    </style>
+</head>
+<body>
+    <!-- Kelopak Bunga Jatuh -->
+    <div class="petal-container">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+    </div>
+    <!-- Kontainer Kelopak Bunga Melayang -->
+    <div class="petal-container" id="petalContainer"></div>
+
+    <!-- Ornamen Bunga di Sudut Layar -->
+    <div class="flower-corner flower-top-left"></div>
+    <div class="flower-corner flower-bottom-right"></div>
+
+    <!-- Navbar Tengah (Center Aligned) -->
+    <nav class="centered-nav">
+        <a href="{{ url_for('beranda') }}" class="logo"><i class="fa-solid fa-seedling"></i> Weeta Florist.</a>
+        
+        <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
+        
+        <ul class="nav-links">
+            <li><a href="{{ url_for('beranda') }}">Home</a></li>
+            <li><a href="{{ url_for('tentang') }}">About Us</a></li>
+            <li><a href="{{ url_for('produk') }}">Flower Collection <i class="fa-solid fa-angle-down" style="font-size: 10px;"></i></a></li>
+            <li><a href="{{ url_for('kontak') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Tempat Konten Halaman -->
+    <main class="content-wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-main glass">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="logo-footer">Weeta Florist.</h3>
+                <p style="font-size: 0.9rem;">Every Bloom Tells a Story, Every Flower Holds a Feeling</p>
+                <p style="font-size: 0.9rem;">Setiap bunga memiliki cerita, dan setiap rangkaian menyimpan perasaan</p>
+                <p style="font-size: 0.9rem;">Weeta punya bunga yang siap mewakili perasaanmu!</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>What We Offer?</h4>
+                <ul>
+                    <li><a href="#">Hand Bouquet</a></li>
+                    <li><a href="#">Flower Bouquet</a></li>
+                    <li><a href="#">Custom Bouquet</a></li>
+                    <li><a href="#">Preserved & Dried Flowers</a></li>
+                    <li><a href="#">Flower Delivery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <p style="font-size: 0.9rem;"><i class="fa-regular fa-clock"></i> Open: 07.00 - 21.00 WIB</p>
+                <p style="font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> Jl. Sejuta Bunga No. 17 ,Magelang</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Weeta Florist. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- File JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

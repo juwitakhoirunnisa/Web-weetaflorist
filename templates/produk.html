@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container">
+    <section class="section-spacing text-center">
+        <h2 class="sub-title">Our Bloom Collection</h2>
+        <p style="margin-bottom: 3rem; color: var(--warna-teks-utama);">Your mood, your flowers, your story. Pilih rangkaian favoritmu dan make every moment bloom!.</p>
+
+        <!-- ================= KATEGORI 1: ROSES ================= -->
+        <div style="margin-bottom: 4rem; text-align: left;">
+            <h3 style="font-family: var(--font-judul); color: var(--warna-pink-bata); font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid rgba(183, 94, 106, 0.2); padding-bottom: 0.5rem;">
+                <i class="fa-solid fa-seedling" style="font-size: 1.2rem; margin-right: 8px;"></i> Roses
+            </h3>
+            <div class="grid">
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-hot">Best Seller</div>
+                    <img src="{{ url_for('static', filename='img/rose.png') }}" alt="Classic Red Romance" class="product-img">
+                    <h3>Classic Red Romance</h3>
+                    <p class="price">Rp 3.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-new">New</div>
+                    <img src="{{ url_for('static', filename='img/mp.png') }}" alt="Velvet Pink Rose" class="product-img">
+                    <h3>Velvet Pink Rose</h3>
+                    <p class="price">Rp 2.500.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <img src="{{ url_for('static', filename='img/m.png') }}" alt="Pure White Rose" class="product-img">
+                    <h3>Pure White Rose Bouquet</h3>
+                    <p class="price">Rp 2.500.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KATEGORI 2: TULIPS ================= -->
+        <div style="margin-bottom: 4rem; text-align: left;">
+            <h3 style="font-family: var(--font-judul); color: var(--warna-pink-bata); font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid rgba(183, 94, 106, 0.2); padding-bottom: 0.5rem;">
+                <i class="fa-solid fa-seedling" style="font-size: 1.2rem; margin-right: 8px;"></i> Tulips
+            </h3>
+            <div class="grid">
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-new">New</div>
+                    <img src="{{ url_for('static', filename='img/tulip pink.png') }}" alt="Dutch Pink Tulip" class="product-img">
+                    <h3>Dutch Pink Tulip</h3>
+                    <p class="price">Rp 2.500.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <img src="{{ url_for('static', filename='img/Tk.png') }}" alt="Sunny Yellow Tulip" class="product-img">
+                    <h3>Sunny Yellow Tulip</h3>
+                    <p class="price">Rp 3.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-new">New</div>
+                    <img src="{{ url_for('static', filename='img/tulpu.png') }}" alt="Royal Purple Tulip" class="product-img">
+                    <h3>Royal Purple Tulip</h3>
+                    <p class="price">Rp 4.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KATEGORI 3: BABY'S BREATH ================= -->
+        <div style="margin-bottom: 4rem; text-align: left;">
+            <h3 style="font-family: var(--font-judul); color: var(--warna-pink-bata); font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid rgba(183, 94, 106, 0.2); padding-bottom: 0.5rem;">
+                <i class="fa-solid fa-seedling" style="font-size: 1.2rem; margin-right: 8px;"></i> Baby's Breath
+            </h3>
+            <div class="grid">
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-hot">Best Seller</div>
+                    <img src="{{ url_for('static', filename='img/bbp.png') }}" alt="Snowy Dream" class="product-img">
+                    <h3>Snowy Dream Gypsophila</h3>
+                    <p class="price">Rp 5.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-new">New</div>
+                    <img src="{{ url_for('static', filename='img/bbr.png') }}" alt="Rainbow Breath" class="product-img">
+                    <h3>Rainbow Baby's Breath</h3>
+                    <p class="price">Rp 5.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <img src="{{ url_for('static', filename='img/bbb.png') }}" alt="Pastel Blue Breath" class="product-img">
+                    <h3>Pastel Blue Breath</h3>
+                    <p class="price">Rp 5.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KATEGORI 4: LILIES ================= -->
+        <div style="margin-bottom: 4rem; text-align: left;">
+            <h3 style="font-family: var(--font-judul); color: var(--warna-pink-bata); font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid rgba(183, 94, 106, 0.2); padding-bottom: 0.5rem;">
+                <i class="fa-solid fa-seedling" style="font-size: 1.2rem; margin-right: 8px;"></i> Lilies
+            </h3>
+            <div class="grid">
+                <div class="card glass-panel" style="text-align: center;">
+                    <img src="{{ url_for('static', filename='img/llw.png') }}" alt="White Lily" class="product-img">
+                    <h3>Elegance White Lily</h3>
+                    <p class="price">Rp 2.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-hot">Best Seller</div>
+                    <img src="{{ url_for('static', filename='img/llp.png') }}" alt="Stargazer Lily" class="product-img">
+                    <h3>Stargazer Pink Lily</h3>
+                    <p class="price">Rp 2.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <img src="{{ url_for('static', filename='img/llg.png') }}" alt="Golden Sunset Lily" class="product-img">
+                    <h3>Golden Sunset Lily</h3>
+                    <p class="price">Rp 2.500.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KATEGORI 5: MIXED FLOWERS ================= -->
+        <div style="margin-bottom: 4rem; text-align: left;">
+            <h3 style="font-family: var(--font-judul); color: var(--warna-pink-bata); font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid rgba(183, 94, 106, 0.2); padding-bottom: 0.5rem;">
+                <i class="fa-solid fa-seedling" style="font-size: 1.2rem; margin-right: 8px;"></i> Mixed Flowers
+            </h3>
+            <div class="grid">
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-hot">New</div>
+                    <img src="{{ url_for('static', filename='img/sp.png') }}" alt="Spring Garden Mix" class="product-img">
+                    <h3>Spring Garden Mix</h3>
+                    <p class="price">Rp 3.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-new">New</div>
+                    <img src="{{ url_for('static', filename='img/pastel.png') }}" alt="Pastel Harmony" class="product-img">
+                    <h3>Pastel Harmony Bouquet</h3>
+                    <p class="price">Rp 3.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+                <div class="card glass-panel" style="text-align: center;">
+                    <div class="badge badge-new">New</div>
+                    <img src="{{ url_for('static', filename='img/garden.png') }}" alt="Sunset Blossom Mix" class="product-img">
+                    <h3>Sunset Blossom Mix</h3>
+                    <p class="price">Rp 2.000.000</p>
+                    <button class="btn-outline" style="width: 100%;">Yuk, Order Sekarang!</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+{% endblock %}

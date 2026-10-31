@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container">
+    <!-- Hero Section -->
+    <header class="text-center section-spacing" style="padding-top: 5vh;">
+        <div class="hero-title">
+            <span class="title-pink">Weeta</span><br>
+            <span class="title-green">Florist</span>
+        </div>
+        <p style="margin-top: 1.5rem; color: var(--warna-teks-utama); font-size: 1.1rem;">
+            Every Bloom Tells a Story, Every Flower Holds a Feeling
+        </p>
+        <p style="font-size: 0.85rem; color: var(--warna-pink-bata); font-style: italic;">
+            A little gift, a lot of meaning
+            *Free greeting card untuk setiap order!
+        </p>
+        
+        <a href="{{ url_for('produk') }}" class="btn-outline" style="margin-top: 2rem; display: inline-block; text-decoration: none;">
+            <i class="fa-solid fa-magnifying-glass"></i> Kira-kira mana bunga pilihan kamu hmm?
+        </a>
+    </header>
+
+    <!-- Keunggulan Kami -->
+    <section class="section-spacing text-center">
+        <h2 class="sub-title">Why Choose Weeta?</h2>
+        <div class="grid">
+            <div class="glass-panel text-center">
+                <i class="fa-solid fa-leaf" style="font-size: 2rem; color: var(--warna-hijau-olive); margin-bottom: 15px;"></i>
+                <h3>Freshness Guaranteed</h3>
+                <p>Fresh flowers, fresh feelings! Setiap bunga dipilih dengan teliti supaya tetap fresh dan cantik sampai ke tanganmu.</p>
+            </div>
+            <div class="glass-panel text-center">
+                <i class="fa-solid fa-palette" style="font-size: 2rem; color: var(--warna-pink-bata); margin-bottom: 15px;"></i>
+                <h3>Pretty & Personal Design</h3>
+                <p>Your flowers, your style! Bisa custom desain sesuai mood, warna, dan momen spesialmu..</p>
+            </div>
+            <div class="glass-panel text-center">
+                <i class="fa-solid fa-truck-fast" style="font-size: 2rem; color: var(--warna-hijau-olive); margin-bottom: 15px;"></i>
+                <h3>Safe & Fast Delivery</h3>
+                <p>No worries about the journey! Kami pastikan bunga dikemas dengan aman agar sampai di tujuan tetap cantik.</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

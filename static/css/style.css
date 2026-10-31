@@ -1,0 +1,217 @@
+/* ==========================================================================
+   1. VARIABEL GLOBAL TEMA (Garden Dreams Aesthetic)
+   ========================================================================== */
+:root {
+    --warna-teks-utama: #5a5a5a;       
+    --warna-pink-bata: #b75e6a;    
+    --warna-hijau-olive: #5d6d4b;  
+    
+    --font-judul: 'Playfair Display', serif; 
+    --font-teks: 'Poppins', sans-serif;      
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    /* GRADASI RADIAL MEMUSAT */
+    background: radial-gradient(circle at top center, #ffffff 0%, #fff0f3 60%, #fce1e6 100%);
+    font-family: var(--font-teks); 
+    color: var(--warna-teks-utama); 
+    display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden;
+    position: relative;
+}
+
+
+.glass { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); }
+.glass-panel { 
+    background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(15px); 
+    border: 1px solid rgba(255, 255, 255, 1); border-radius: 20px; 
+    padding: 2.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+}
+/* --- ORNAMEN BUNGA DI SUDUT LUAR --- */
+.flower-corner {
+    position: fixed; 
+    width: 480px;      
+    height: 390px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    z-index: 1;        
+    opacity: 0.95;     
+    pointer-events: none;
+}
+
+/* 1. Bunga di Pojok Kiri Atas */
+.flower-top-left {
+    top: -30px; 
+    left: -270px;
+    background-image: url('../img/bunga bwh.png'); 
+    transform: rotate(180deg); 
+}
+
+/* Bunga di Pojok Kanan Bawah */
+.flower-bottom-right {
+    bottom: -30px; 
+    right: -270px;
+    top: auto; 
+    background-image: url('../img/bunga bwh.png'); 
+    transform: rotate(0deg); 
+}
+
+/* ==========================================================================
+   3. TIPOGRAFI
+   ========================================================================== */
+h1, h2, h3, h4, .sub-title { font-family: var(--font-judul); }
+.sub-title { font-size: 2.2rem; color: var(--warna-hijau-olive); margin-bottom: 1.5rem; }
+
+/* Judul Hero Dua Warna */
+.hero-title { font-family: var(--font-judul); font-size: 6rem; line-height: 0.9; letter-spacing: -2px; }
+.title-pink { color: var(--warna-pink-bata); font-weight: 400; }
+.title-green { color: var(--warna-hijau-olive); font-weight: 400; }
+
+/* ==========================================================================
+   4. LAYOUT UTAMA
+   ========================================================================== */
+.content-wrapper { flex: 1; padding-top: 180px; z-index: 10; position: relative; padding-bottom: 50px; }
+.page-container { width: 90%; max-width: 1100px; margin: 0 auto; }
+.section-spacing { margin-bottom: 4rem; }
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   5. NAVBAR TENGAH (CENTER ALIGNED)
+   ========================================================================== */
+.centered-nav { 
+    position: absolute; top: 0; width: 100%; display: flex; flex-direction: column; 
+    align-items: center; padding: 2.5rem 5% 1rem; z-index: 100; 
+}
+.centered-nav .logo { 
+    font-family: var(--font-judul); font-size: 1.2rem; font-weight: 600; 
+    color: var(--warna-pink-bata); text-decoration: none; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.centered-nav .nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
+.centered-nav .nav-links a { text-decoration: none; color: #4a4a4a; font-weight: 400; font-size: 0.95rem; transition: 0.3s; }
+.centered-nav .nav-links a:hover { color: var(--warna-pink-bata); }
+.centered-nav #menu-btn { display: none; position: absolute; top: 2rem; right: 5%; font-size: 1.5rem; cursor: pointer; color: var(--warna-pink-bata); }
+
+/* ==========================================================================
+   6. KOMPONEN (Tombol, Grid Produk, Form)
+   ========================================================================== */
+.btn-outline { 
+    background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.1); 
+    color: #4a4a4a; padding: 12px 30px; font-family: inherit; font-size: 0.95rem; 
+    cursor: pointer; transition: 0.3s; border-radius: 30px; backdrop-filter: blur(5px);
+}
+.btn-outline:hover { background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); color: var(--warna-pink-bata); }
+
+.btn-solid { 
+    background: var(--warna-pink-bata); border: none; color: #fff; padding: 12px 30px; 
+    border-radius: 30px; font-family: inherit; cursor: pointer; transition: 0.3s; 
+}
+.btn-solid:hover { background: var(--warna-hijau-olive); }
+
+.grid { display: grid; gap: 30px; }
+.card { padding: 1.5rem; text-align: center; transition: 0.3s; position: relative; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+.product-img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 1.5rem; }
+.price { font-weight: 600; color: var(--warna-pink-bata); font-size: 1.1rem; margin-bottom: 1.5rem; }
+.badge { position: absolute; top: -10px; right: -10px; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; z-index: 2; }
+.badge-hot { background: #e74c3c; }
+.badge-new { background: var(--warna-hijau-olive); }
+
+.glass-input { 
+    width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,1); 
+    background: rgba(255,255,255,0.7); border-radius: 8px; outline: none; 
+    font-family: inherit; font-size: 0.95rem; transition: 0.3s;
+}
+.glass-input:focus { border-color: var(--warna-pink-bata); background: #fff; }
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.footer-main { padding: 4rem 5% 1rem; width: 100%; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.9); z-index: 10; position: relative; }
+.footer-grid { display: grid; gap: 30px; margin-bottom: 3rem; }
+.logo-footer { font-family: var(--font-judul); color: var(--warna-pink-bata); font-size: 1.5rem; margin-bottom: 1rem; }
+.footer-col h4 { margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--warna-hijau-olive); }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.8rem; }
+.footer-col ul li a { color: var(--warna-teks-utama); text-decoration: none; transition: 0.3s; }
+.footer-col ul li a:hover { color: var(--warna-pink-bital); }
+.social-icons a { color: var(--warna-hijau-olive); font-size: 1.2rem; margin-right: 15px; transition: 0.3s; }
+.social-icons a:hover { color: var(--warna-pink-bata); }
+.footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.85rem; }
+
+/* ==========================================================================
+   8. MEDIA QUERIES (RESPONSIF)
+   ========================================================================== */
+@media (min-width: 992px) {
+    .grid { grid-template-columns: repeat(3, 1fr); } 
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr; } 
+}
+@media (max-width: 991px) and (min-width: 577px) {
+    .grid { grid-template-columns: repeat(2, 1fr); } 
+    .footer-grid { grid-template-columns: repeat(2, 1fr); } 
+    .hero-title { font-size: 4.5rem; }
+    .flower-corner { width: 260px; height: 260px; }
+}
+@media (max-width: 576px) {
+    .grid { grid-template-columns: 1fr; } 
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    
+    .centered-nav .nav-links { 
+        display: none; flex-direction: column; position: absolute; 
+        top: 80px; left: 0; width: 100%; 
+        background: rgba(255,255,255,0.95); padding: 1.5rem 0; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .centered-nav .nav-links.active { display: flex; }
+    .centered-nav .nav-links li { margin: 10px 0; }
+    .centered-nav #menu-btn { display: block; }
+    
+    .hero-title { font-size: 3.5rem; }
+    .flower-corner { width: 180px; height: 180px; }
+    .content-wrapper { padding-top: 120px; }
+}
+/* --- ANIMASI KELOPAK BUNGA MELAYANG --- */
+.petal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 2; 
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background-color: #ffb3c6; 
+    border-radius: 150% 0% 150% 0%;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%) translateX(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(50vh) translateX(50px) rotate(180deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(105vh) translateX(-50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.card, .product-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer; 
+}
+
+.card:active, .product-card:active {
+    transform: scale(0.96) translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(157, 47, 74, 0.6);
+}

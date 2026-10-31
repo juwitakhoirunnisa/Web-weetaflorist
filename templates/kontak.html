@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-container" style="display: flex; justify-content: center;">
+    <section class="glass-panel text-center section-spacing" style="max-width: 650px; width: 100%; margin-top: 2rem;">
+        <h2 class="sub-title">Chat with MinWee</h2>
+        <p>Want a special request? Tinggalkan pesan kamu untuk MinWee.</p>
+        
+        <form id="form" style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; text-align: left;">
+            <div>
+                <label for="nama" style="font-weight: 500; font-size: 0.9rem; color: var(--warna-teks-utama);">Your Full Name</label>
+                <input type="text" id="nama" class="glass-input" placeholder="Enter your full name" required>
+            </div>
+            <div>
+                <label for="email" style="font-weight: 500; font-size: 0.9rem; color: var(--warna-teks-utama);">Active Email</label>
+                <input type="email" id="email" class="glass-input" placeholder="Enter your email address" required>
+            </div>
+            <div>
+                <label for="pesan" style="font-weight: 500; font-size: 0.9rem; color: var(--warna-teks-utama);">What's on Your Mind?</label>
+                <textarea id="pesan" class="glass-input" rows="4" placeholder="Write your request here..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-solid" style="margin-top: 10px;">Send Message Now</button>
+        </form>
+    </section>
+</div>
+{% endblock %}
